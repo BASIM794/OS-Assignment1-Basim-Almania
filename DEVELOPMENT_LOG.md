@@ -13,91 +13,108 @@ Document your development process as you work on the assignment. Add entries sho
 
 ## Example Entry Format:
 
-### Entry 1 - [April 1, 2026, 2:30 PM]
-**What I did**: Forked the repository and set up my student ID
+### Entry  - March 31, 2026, 6:00 PM
+**What I did**: Configure the project and execute the first code.
 
 **Details**: 
-- Created GitHub account with university email
-- Forked the starter repository
-- Changed student ID on line 92 to my actual ID (441234567)
-- Compiled and ran the program successfully
+• The startup code was downloaded and opened.
+• In the main class, the student ID was updated.
+• The program was successfully compiled and executed.
+• Observed the creation and printing of processesexamined the code step by step.
 
-**Challenges**: Had to install JDK first because javac wasn't recognized
 
-**Solution**: Downloaded JDK 17 from Oracle website and set PATH variable
+**Challenges**:Recognizing the original structure
 
-**Time spent**: 30 minutes
+**Solution**:examined the code step by step.
+
+**Time spent**: 1 hour
 
 ---
 
 ## Your Development Log:
 
-### Entry 1 - [Date and Time]
-**What I did**: 
+### Entry 2 - [March 31, 2026, 8:30 PM]
+**What I did**: thorough comprehension of scheduling logic
 
 **Details**: 
+• Examined the scheduler's governing while loop
+• Researched the dequeuing and re-adding of processes
+• Emphasized the application of Round-Robin behavior
 
-**Challenges**: 
+**Challenges**: Recognizing when a process is re-queued
 
-**Solution**: 
+**Solution**: execution that was closely monitored using printed output
 
-**Time spent**: 
+**Time spent**: 45 minutes
 
 ---
 
-### Entry 2 - [Date and Time]
-**What I did**: 
+### Entry 3 - [April 2, 2026, 5:00 PM]
+**What I did**: Feature 1 (Priority) was implemented.
 
 **Details**: 
+• The Process class now has a priority attribute.
+• Added priority to the constructor.
+• Random priority values were generated.
+• The getter method was added.
 
-**Challenges**: 
+**Challenges**: Ensuring that every process object is appropriately assigned a priority
 
-**Solution**: 
+**Solution**: examined the output and verified the creation of objects inside the loop.
 
-**Time spent**: 
+**Time spent**: 90 minutes
 
 ---
 
-### Entry 3 - [Date and Time]
-**What I did**: 
+### Entry 4  - [ April 2, 2026, 6:30 PM]
+**What I did**: Enhanced results and confirmed Feature 1
 
-**Details**: 
+**Details**:
+• Priority was printed along with procedure details.
+• Conduct several tests to verify accuracy
+• Confirmed that scheduling logic was unaffected. 
 
-**Challenges**: 
+**Challenges**: Maintaining clear output formatting
 
-**Solution**: 
+**Solution**:Print statements were carefully adjusted.Maintaining clear output formatting
 
-**Time spent**: 
-
----
-
-### Entry 4 - [Date and Time]
-**What I did**: 
-
-**Details**: 
-
-**Challenges**: 
-
-**Solution**: 
-
-**Time spent**: 
+**Time spent**: 40 minutes
 
 ---
 
-### Entry 5 - [Date and Time]
-**What I did**: 
+### Entry 5 - [April 2, 2026, 7:15 PM]
+**What I did**: Feature 2 (Context Switch Counter) was implemented.
 
-**Details**: 
+**Details**:
+• The global counter variable was added.
+• The scheduling loop's incremented counter.
+• After the dequeuing operation, the proper position was identified.
 
-**Challenges**: 
+**Challenges**:Determining the precise placement of context switches 
 
-**Solution**: 
+**Solution**: tried many configurations until the results made sense.
 
-**Time spent**: 
+**Time spent**: 45 minutes
 
 ---
 
-### Entry 6 - [Optional - Date and Time]
+### Entry 6 - [April 2, 2026, 8:00 PM]
+**What I did**: Feature 3 (Waiting Time Tracking) has been implemented.
+
+**Details**: 
+• Added the variables arrivalTime and totalWaitingTime.
+• Determined the waiting period prior to execution.
+• Utilized the system.currentTimeMillis()
+• Accumulated waiting time was stored.
+**Challenges**: Comprehending timing computations and preventing duplication
+
+**Solution**: manually debugged and tracked data step-by-step
+
+**Time spent**: 1 hour
+
+---
+
+### Entry 7 - [Optional - Date and Time]
 **What I did**: 
 
 **Details**: 
@@ -112,10 +129,10 @@ Document your development process as you work on the assignment. Add entries sho
 
 ## Summary
 
-**Total time spent on assignment**: [X hours]
+**Total time spent on assignment**: 3 days
 
-**Most challenging part**: 
+**Most challenging part**: Putting waiting time tracking into practice and accurately setting calculations
 
-**Most interesting learning**: 
+**Most interesting learning**: Knowing how Round-Robin scheduling guarantees equityKnowing how Round-Robin scheduling guarantees equity
 
-**What I would do differently next time**: 
+**What I would do differently next time**: Start earlier and gradually test every feature.
