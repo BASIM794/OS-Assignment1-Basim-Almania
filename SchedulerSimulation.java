@@ -32,6 +32,12 @@ class Process implements Runnable {
     
     private int priority; // Feature 1 Added priority field to represent process importance
     // Constructor to initialize the process with name, burst time, and time quantum
+    // Feature 3
+    // Time when process entered ready queue
+    private long arrivalTime;
+
+    // Total waiting time accumulated
+    private long totalWaitingTime = 0;
     public Process(String name, int burstTime, int timeQuantum, int priority) {
         this.name = name;
         this.burstTime = burstTime;
@@ -146,7 +152,22 @@ class Process implements Runnable {
    public int getPriority() {
     return priority;
     }
+        // Feature 3
+        public void setArrivalTime(long time) {
+            arrivalTime = time;
+        }
 
+        public long getArrivalTime() {
+            return arrivalTime;
+        }
+
+        public void addWaitingTime(long time) {
+            totalWaitingTime += time;
+        }
+
+        public long getTotalWaitingTime() {
+            return totalWaitingTime;
+        }
 
     // Check if the process has finished (i.e., no remaining time)
     public boolean isFinished() {
@@ -192,6 +213,13 @@ public class SchedulerSimulation {
         // Feature 2
         System.out.println(Colors.BRIGHT_CYAN + "Total context switches: " + 
                   Colors.BOLD + contextSwitchCount + Colors.RESET);
+                  // Feature 3
+         System.out.println("\nWaiting Time Summary:");
+         for (Process p : processMap.values()) {
+        System.out.println(
+        p.getName() + " | Burst: " + p.getBurstTime() +
+        " | Waiting: " + p.getTotalWaitingTime() + " ms");
+}
         System.out.println(Colors.BOLD + Colors.BRIGHT_CYAN + "║" + Colors.RESET + 
                           Colors.YELLOW + "  ⚙ Processes:     " + Colors.RESET + Colors.BRIGHT_YELLOW + 
                           String.format("%-65s", numProcesses) + 
@@ -262,6 +290,10 @@ public class SchedulerSimulation {
             // Count only when switching between processes
             if (currentThread != null) {
                 contextSwitchCount++;
+                // Feature 3
+            Process process = processMap.get(currentThread);
+            long waitTime = System.currentTimeMillis() - process.getArrivalTime();
+            process.addWaitingTime(waitTime);
             }
             // Start the thread, which will run the process for one time quantum
             currentThread.start();
@@ -316,6 +348,8 @@ public class SchedulerSimulation {
         
         // Map the thread to the process, so we can track the process associated with each thread
         processMap.put(thread, process);
+        // Feature 3
+        process.setArrivalTime(System.currentTimeMillis());
         
         // Print a message indicating the process has entered the ready queue
         System.out.println(Colors.BLUE + "  ➕ " + Colors.BOLD + Colors.CYAN + process.getName() + 
